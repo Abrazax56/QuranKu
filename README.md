@@ -1,1 +1,1 @@
-<img src="https://abrazax56.github.io/QuranKu/assets/og.png"/>
+<img src="https://abrazax56.github.io/Quran-Ku/assets/og.png"/>
