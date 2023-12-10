@@ -10,8 +10,9 @@ const judulSurah2 = document.querySelector('.jdl');
   .then(response => response.json())
   .then(response => {
     let cards = '';
-    response.forEach((e) => {
-      cards += uiListSurah(e);
+    response.forEach((e, i) => {
+      let no = i + 1;
+      cards += uiListSurah(e, no.toLocaleString('ar-EG'));
     });
     listSurah.innerHTML = cards;
   });
@@ -65,8 +66,9 @@ function getShowSurah (i) {
   });
 }
 
-function uiListSurah (e) {
+function uiListSurah (e, i) {
   return `<button type="button" class="grid-items detail" data-bs-toggle="modal" data-bs-target="#opsi" data-nomor="${e.nomor}">
+            <p class="nomor_surah detail" data-bs-toggle="modal" data-bs-target="#opsi" data-nomor="${e.nomor}">${i}</p>
             <p class="nama_surat detail" data-bs-toggle="modal" data-bs-target="#opsi" data-nomor="${e.nomor}">${e.nama}</p>
             <p class="nama_latin detail" data-bs-toggle="modal" data-bs-target="#opsi" data-nomor="${e.nomor}">${e.nama_latin}</p>
             <p class="jumlah_ayat detail" data-bs-toggle="modal" data-bs-target="#opsi" data-nomor="${e.nomor}">Jumlah Ayat : ${e.jumlah_ayat}</p>
